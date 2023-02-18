@@ -29,17 +29,18 @@ void loop(){
   char key = keypad.getKey();
   
   // storing inputted numbers in array
-  if (Serial.available()>=3)
+
+  for (int i=0; i<3; i++)
   {
-      for (int i=0; i<4; i++)
-      {
-          array[i] = Serial.read();
-      }
+      array[i] = Serial.read();
   }
   
   //printing keyboard inputs to screen
   if (key){
-    Serial.println(key);
+    for(int i = 0; i<3; i++)
+    {
+      Serial.println(array[i]);
+    }
   }
   delay(10);
   Serial.flush();
