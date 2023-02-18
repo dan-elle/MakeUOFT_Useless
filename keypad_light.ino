@@ -26,12 +26,13 @@ void loop(){
   digitalWrite(13, LOW);    // turn the LED off (making the voltage level LOW)
   delay(100);              // wait for a second
   
-  char key = keypad.getKey();
+
   
   // storing inputted numbers in array
 
   for (int i=0; i<3; i++)
   {
+      char key = keypad.getKey();
       array[i] = Serial.read();
   }
   
