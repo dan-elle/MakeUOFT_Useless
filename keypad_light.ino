@@ -13,11 +13,11 @@ byte rowPins[ROWS] = {9, 8, 7, 6}; //connect to the row pinouts of the keypad
 byte colPins[COLS] = { 5, 4, 3, 2}; //connect to the column pinouts of the keypad
 
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
-
+int array[3]={};
 void setup(){
    pinMode(13, OUTPUT);
    Serial.begin(9600);
-   Serial.println("1");
+   Serial.println("1"); //prints 1 to see if keypad works (at beginning)
 }
   
 void loop(){
@@ -28,6 +28,16 @@ void loop(){
   
   char key = keypad.getKey();
   
+  // storing inputted numbers in array
+  if (Serial.available()>=3)
+  {
+      for (int i=0; i<4; i++)
+      {
+          array[i] = Serial.read();
+      }
+  }
+  
+  //printing keyboard inputs to screen
   if (key){
     Serial.println(key);
   }
