@@ -1,0 +1,36 @@
+while(keyPress != '#' ){                // test to see if the # key is pressed, if not add more characters                   
+          
+        keyPress = mykeypad.getKey();     // get new key press
+        
+        if(keyPress)
+        { 
+          if(keyPress == '*')              // check if * has been pressed
+          {
+            keyPress = '.';                // if so replace with .
+          }
+        
+        if(keyPress != 'D' && keyPress != 'A' && keyPress != 'B' && keyPress != 'C' && keyPress != '#')   // check that only a number key has been pressed
+        {   
+        textNumber += (char)keyPress;      // concatanate new character onto textNumber string
+        
+        lcd.setCursor(10,2);
+        lcd.print(textNumber);
+        lcd.print("");
+        }
+        }
+      };
+
+    switch(keyStore) {                        // This switch checks the original key pressed which is stored in keyStore to assign the string textNumber to the right variable
+      
+      case 'A':
+      onDuration = textNumber.toFloat();     // reset the value of onDuration using the string textNumber
+      break;
+      
+      case 'B':
+      offDuration = textNumber.toFloat();     // reset the value of offDuration using the string textNumber 
+      break;
+      
+      case 'C':
+      numCycles= textNumber.toInt();         // reset the value of offDuration using the string textNumber
+      break;
+    }
