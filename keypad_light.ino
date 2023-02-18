@@ -30,10 +30,11 @@ void loop(){
   
   // storing inputted numbers in array
 
+  char key;
   for (int i=0; i<3; i++)
   {
-      char key = keypad.getKey();
-      array[i] = Serial.read();
+      key = keypad.getKey();
+      array[i] = Serial.read(key);
   }
   
   //printing keyboard inputs to screen
