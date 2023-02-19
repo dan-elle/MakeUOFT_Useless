@@ -21,7 +21,6 @@ char hexaKeys[ROWS][COLS] = {
 byte rowPins[ROWS] = {5, 4, 3, 2};
 byte colPins[COLS] = {9, 8, 7, 6};
 Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
-int doneLoop = 0;
 
 void setup() 
 {
@@ -35,13 +34,53 @@ void setup()
 
 }
 
-void loop() 
+void loop()
 {
-  char customKey = customKeypad.getKey();
-  if (customKey){
-    lcd.setCursor(0,0);
-    lcd.print("Enter Number: ");
-    lcd.setCursor(0, 1); 
-    lcd.print(customKey);
+  int doneLoop = 0;
+  while (doneLoop == 0) {
+    char customKey = customKeypad.getKey();
+    switch (customKey) {
+      case '0':
+        lcd.setCursor(0, 1);
+        lcd.print('0');
+        break;
+      case '1':
+        lcd.setCursor(0, 1);
+        lcd.print('1');
+        break;
+      case '2':
+        lcd.setCursor(0, 1);
+        lcd.print('2');
+        break;
+      case '3':
+        lcd.setCursor(0, 1);
+        lcd.print('3');
+        break;
+      case '4':
+        lcd.setCursor(0, 1);
+        lcd.print('4');
+        break;
+      case '5':
+        lcd.setCursor(0, 1);
+        lcd.print('5');
+        break;
+      case '6':
+        lcd.setCursor(0, 1);
+        lcd.print('6');
+        break;
+      case '7':
+        lcd.setCursor(0, 1);
+        lcd.print('7');
+        break;
+      case '8':
+        lcd.setCursor(0, 1);
+        lcd.print('8');
+        break;
+      case '9':
+        lcd.setCursor(0, 1);
+        lcd.print('9');
+        lcd.clear();
+        break;
+
+    }
   }
-}
