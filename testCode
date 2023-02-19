@@ -34,6 +34,7 @@ void setup()
 
 }
 
+
 void loop()
 {
   int doneLoop = 0;
@@ -43,43 +44,53 @@ void loop()
       case '0':
         lcd.setCursor(0, 1);
         lcd.print('0');
+        digitalWrite(13, LOW); 
         break;
       case '1':
         lcd.setCursor(0, 1);
         lcd.print('1');
+        digitalWrite(13, LOW); 
         break;
       case '2':
         lcd.setCursor(0, 1);
         lcd.print('2');
+        digitalWrite(13, LOW); 
         break;
       case '3':
         lcd.setCursor(0, 1);
         lcd.print('3');
+        digitalWrite(13, LOW); 
         break;
       case '4':
         lcd.setCursor(0, 1);
         lcd.print('4');
+        digitalWrite(13, LOW); 
         break;
       case '5':
         lcd.setCursor(0, 1);
         lcd.print('5');
+        digitalWrite(13, LOW); 
         break;
       case '6':
         lcd.setCursor(0, 1);
         lcd.print('6');
+        digitalWrite(13, LOW); 
         break;
       case '7':
         lcd.setCursor(0, 1);
         lcd.print('7');
+        digitalWrite(13, LOW); 
         break;
       case '8':
         lcd.setCursor(0, 1);
         lcd.print('8');
+        digitalWrite(13, LOW); 
         break;
       case '9':
         lcd.setCursor(0, 1);
         lcd.print('9');
-        lcd.clear();
+        digitalWrite(13, HIGH); 
+        doneLoop = 1;
         break;
 
     }
