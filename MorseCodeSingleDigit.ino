@@ -34,7 +34,7 @@ int array6[] = {1, 0, 0, 0, 0};
 int array7[] = {1, 1, 0, 0, 0};
 int array8[] = {1, 1, 1, 0, 0};
 int array9[] = {1, 1, 1, 1, 0};
-//
+
 void morseCode(int array[]) {
   for (int i = 0; i < 5; i++) {
     /*digitalWrite(13, HIGH);
