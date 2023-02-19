@@ -18,7 +18,30 @@ char hexaKeys[ROWS][COLS] = {
   {'*', '0', '#', 'D'}
 };
 
-byte rowPins[ROWS] = {9, 8, 7, 6};
-byte colPins[COLS] = {5, 4, 3, 2};
+byte rowPins[ROWS] = {5, 4, 3, 2};
+byte colPins[COLS] = {9, 8, 7, 6};
 Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
+int doneLoop = 0;
 
+void setup() 
+{
+    // set up the LCD's number of columns and rows:
+    lcd.begin(16, 2);
+ 
+    lcd.setRGB(colorR, colorG, colorB);
+    lcd.print("Enter Number: ");
+    //poo();
+    // Print a message to the LCD.
+
+}
+
+void loop() 
+{
+  char customKey = customKeypad.getKey();
+  if (customKey){
+    lcd.setCursor(0,0);
+    lcd.print("Enter Number: ");
+    lcd.setCursor(0, 1); 
+    lcd.print(customKey);
+  }
+}
